@@ -1,5 +1,7 @@
 <script>
   import Window from "./components/Window.svelte";
+  import Legend from "./components/Legend.svelte";
+  import LossMap from "./components/LossMap.svelte";
 
   // Handle responsive iframes for embeds
   import pym from "pym.js";
@@ -19,16 +21,56 @@
 <Window />
 <!-- Outer div must have class 'chart-container' don't change -->
 <div class="chart-container">
-  <h1 class="headline">TKTKTK</h1>
+  <h1 class="headline">Visualizing the shrinking footprint of U.S. wetlands</h1>
 
-  <p class="dek"></p>
+  <p class="dek">
+    More than half of U.S. wetlands have been drained, filled or altered. In the
+    1780s, before widespread development and agricultural expansion, the <span
+      class="original-wetlands">estimated extent of wetlands</span
+    >
+    was about 221 million acres, an area that would have stretched from northwest
+    Nebraska to southeast Kentucky. Two centuries later, a 1980
+    <span class="remaining-wetlands">estimate of remaining wetlands</span> was about
+    103 million acres.
+  </p>
+  <Legend />
   <p class="sr-only"></p>
 
-  <div id="g-viz"></div>
+  <div id="g-viz">
+    <LossMap />
+  </div>
 
   {#if includeCredit}
     <div class="credit">
-      Data: TKTK; Graphic by Jared Whalen /
+      <div class="mapboxgl-ctrl-attrib-inner">
+        <a
+          href="https://www.mapbox.com/about/maps/"
+          target="_blank"
+          title="Mapbox"
+          aria-label="Mapbox">© Mapbox</a
+        >
+        <a
+          href="https://www.openstreetmap.org/copyright/"
+          target="_blank"
+          title="OpenStreetMap"
+          aria-label="OpenStreetMap">© OpenStreetMap</a
+        >
+        <a
+          class="mapbox-improve-map"
+          href="https://apps.mapbox.com/feedback/?owner=startribune&amp;id=cm8hhq3e6017901s55dfi5dmn&amp;access_token=pk.eyJ1Ijoic3RhcnRyaWJ1bmUiLCJhIjoiY2sxYjRnNjdqMGtjOTNjcGY1cHJmZDBoMiJ9.St9lE8qlWR5jIjkPYd3Wqw#/-92.53/39.55/5.06"
+          target="_blank"
+          title="Improve this map"
+          aria-label="Improve this map"
+          rel="noopener nofollow">Improve this map</a
+        >
+        <a
+          href="https://www.maxar.com/"
+          target="_blank"
+          title="Maxar"
+          aria-label="Maxar">© Maxar</a
+        >
+      </div>
+      Data: U.S. Fish and Wildlife Service; Graphic by Jared Whalen /
       <a target="_blank" href="https://agwaterdesk.org/">Ag & Water Desk</a>
     </div>
   {/if}
@@ -42,6 +84,21 @@
 
     #g-viz {
       width: 100%;
+    }
+
+    .dek {
+      span {
+      }
+
+      .original-wetlands {
+        border-bottom: 2px solid var(--project-color-yellow);
+        // border: 2px solid var(--project-color-yellow);
+      }
+
+      .remaining-wetlands {
+        border-bottom: 2px solid #333333;
+        // border: 2px solid #666;
+      }
     }
   }
 </style>

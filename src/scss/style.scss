@@ -2,3 +2,12 @@
 @use "base/base";
 @use "base/typography";
 @use "base/utilities";
+
+:root {
+  --project-color-light-blue: #e6f1f3;
+  --project-color-yellow: #f1b82d;
+  --project-color-teal: #548687;
+  --project-color-green: #6da34d;
+
+  --bg-color: #f7f2de;
+}
