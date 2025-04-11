@@ -29,7 +29,7 @@
       class="original-wetlands">estimated extent of wetlands</span
     >
     was about 221 million acres, an area that would have stretched from northwest
-    Nebraska to southeast Kentucky. Two centuries later, a 1980
+    Nebraska to southeast Kentucky. Two centuries later, a 1990
     <span class="remaining-wetlands">estimate of remaining wetlands</span> was about
     103 million acres.
   </p>
